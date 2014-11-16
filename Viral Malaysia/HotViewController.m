@@ -19,9 +19,7 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
-    
-    NSLog(@"test github");
-    
+        
     // MBProgressHUD Stuff
 //    _progressHUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 //    _progressHUD.mode = MBProgressHUDModeAnnularDeterminate;
