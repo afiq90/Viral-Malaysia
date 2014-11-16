@@ -1,0 +1,65 @@
+TODO :
+
+1) Implement Appirater -- DONE
+2) Try make a new class to get the data and implement in HotTableViewController & TrendingTableViewController
+3) Make a contact bar and about.
+4) Active social sharing when user tapped on action button on hot/trending view controller. -- DONE
+5) Background fetch and silent push notification  -- DONE
+6) Implement MDProgressHUD -- DONE
+7) Make a apns using parse and wordpress -- DONE
+8) Give some animation, use damping for imageview. Use POP/CANVAS animation or default apple animation class. -- DONE
+9) Add an interstitial ads - DONE
+10) Add and banner view ads on webview/trending view controller
+11) Implement didrecevivenotfication method on appdelegate.m
+
+Extend Features :
+
+1) Make a view controller for video. Fetch video data from youtube API or fetch data using FB Graph API.
+2) Make a simple icon like vice news app
+
+PROBLEM :
+
+1) Remove the mbprogresshud from hot and trending webview
+2) Figure out why webview on trending view controller doesn't work properly.
+
+
+Note For Background Fetch :
+
+To make a backgroundfetch you need
+
+1) First you need get notfication permission from
+2) Set delegate for -> (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler in appDelegate.m
+3) Set the methods with delegate -> (void)populateDataWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
+
+4) Specify the data storage file path in viewDidLoad
+5) Load saved data from file in viewDidLoad if file path exist and don't forget to reload the tableview.
+6) Compare the existing data with the new one.
+
+The important now is how we are going to manage the parsed data. Well, four tasks must take place:
+
+To keep the parsed data in the arrNewsData array we declared earlier.
+To reload the table view so it shows the downloaded data.
+To permanently save the data.
+To stop the refresh control from animating.
+
+Reference : http://www.appcoda.com/ios7-background-fetch-programming/
+iOS 7 By Tutorials Chapter 17 & 18
+
+
+Extra :
+
+JSON URL For Category -> http://fastviralnews.com/?json=get_category_posts&slug=gosip
+JSON URL For Search -> http://fastviralnews.com/?json=get_search_results&search=iggy
+App ID -> 941954552
+
+
+TO LEARN :
+
+1) tableview pagination
+2) save video to gallery
+3) Check out saily app at saily.co (can use this idea to make Cash On Delivery app for malaysian)
+
+http://bit.ly/1xOPpXC --> awesome puzzle game
+
+
+

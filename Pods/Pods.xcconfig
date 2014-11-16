@@ -1,0 +1,6 @@
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 $(inherited) SD_WEBP=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/Appirater" "${PODS_ROOT}/Headers/Google-Mobile-Ads-SDK" "${PODS_ROOT}/Headers/MBProgressHUD" "${PODS_ROOT}/Headers/SDWebImage" "${PODS_ROOT}/Headers/UIActivityIndicator-for-SDWebImage" "${PODS_ROOT}/Headers/libwebp" "${PODS_ROOT}/Headers/libwebp/webp"
+LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/Google-Mobile-Ads-SDK/GoogleMobileAdsSdkiOS-6.12.2"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers" -isystem "${PODS_ROOT}/Headers/Appirater" -isystem "${PODS_ROOT}/Headers/Google-Mobile-Ads-SDK" -isystem "${PODS_ROOT}/Headers/MBProgressHUD" -isystem "${PODS_ROOT}/Headers/SDWebImage" -isystem "${PODS_ROOT}/Headers/UIActivityIndicator-for-SDWebImage" -isystem "${PODS_ROOT}/Headers/libwebp" -isystem "${PODS_ROOT}/Headers/libwebp/webp"
+OTHER_LDFLAGS = -ObjC -lGoogleAdMobAds -framework AVFoundation -framework AudioToolbox -framework CFNetwork -framework CoreGraphics -framework CoreTelephony -framework EventKit -framework EventKitUI -framework ImageIO -framework MapKit -framework MessageUI -framework StoreKit -framework SystemConfiguration -weak_framework AdSupport -weak_framework StoreKit
+PODS_ROOT = ${SRCROOT}/Pods
