@@ -40,6 +40,7 @@ PODS:
     - SDWebImage/Core
   - UIActivityIndicator-for-SDWebImage (1.2):
     - SDWebImage (~> 3.7)
+  - XCDYouTubeKit (2.0.3)
 
 DEPENDENCIES:
   - Appirater
@@ -48,6 +49,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 0.8)
   - SDWebImage (~> 3.6)
   - UIActivityIndicator-for-SDWebImage
+  - XCDYouTubeKit (~> 2.0.3)
 
 SPEC CHECKSUMS:
   Appirater: cbdb7f305562cfde585300bfff86da01ae559deb
@@ -57,5 +59,6 @@ SPEC CHECKSUMS:
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
   SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
   UIActivityIndicator-for-SDWebImage: 8bd92c15280fbe54816448c6b14674145eee05c7
+  XCDYouTubeKit: 840728453f0a22f54e4488ebeb8ee955a30c274c
 
 COCOAPODS: 0.32.1

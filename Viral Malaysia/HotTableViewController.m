@@ -211,7 +211,6 @@
 
     HotTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
-    
     NSDictionary *dataFromJSON = _articleArray[indexPath.row];
     
     NSMutableDictionary *response = [[[dataFromJSON valueForKey:@"categories"]  objectAtIndex:0] mutableCopy];

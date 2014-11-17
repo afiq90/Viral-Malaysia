@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88355A351A1A26B4005D844C /* VideoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 88355A341A1A26B4005D844C /* VideoTVC.m */; };
+		88355A381A1A26CA005D844C /* VideoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88355A371A1A26CA005D844C /* VideoTableViewCell.m */; };
 		884468D71A1338800028AC2B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 884468D61A1338800028AC2B /* main.m */; };
 		884468DA1A1338800028AC2B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 884468D91A1338800028AC2B /* AppDelegate.m */; };
 		884468E31A1338800028AC2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 884468E11A1338800028AC2B /* Main.storyboard */; };
@@ -54,6 +56,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		88355A331A1A26B4005D844C /* VideoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoTVC.h; sourceTree = "<group>"; };
+		88355A341A1A26B4005D844C /* VideoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoTVC.m; sourceTree = "<group>"; };
+		88355A361A1A26CA005D844C /* VideoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoTableViewCell.h; sourceTree = "<group>"; };
+		88355A371A1A26CA005D844C /* VideoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoTableViewCell.m; sourceTree = "<group>"; };
 		884468D11A1338800028AC2B /* Viral Malaysia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Viral Malaysia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		884468D51A1338800028AC2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		884468D61A1338800028AC2B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -136,6 +142,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		88355A321A1A2694005D844C /* VideoTVC */ = {
+			isa = PBXGroup;
+			children = (
+				88355A331A1A26B4005D844C /* VideoTVC.h */,
+				88355A341A1A26B4005D844C /* VideoTVC.m */,
+				88355A361A1A26CA005D844C /* VideoTableViewCell.h */,
+				88355A371A1A26CA005D844C /* VideoTableViewCell.m */,
+			);
+			name = VideoTVC;
+			sourceTree = "<group>";
+		};
 		884468C81A13387F0028AC2B = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +178,7 @@
 		884468D31A1338800028AC2B /* Viral Malaysia */ = {
 			isa = PBXGroup;
 			children = (
+				88355A321A1A2694005D844C /* VideoTVC */,
 				884469F91A14DF010028AC2B /* Icons */,
 				8844694A1A13513F0028AC2B /* Hot */,
 				8844694B1A13515D0028AC2B /* Trending */,
@@ -408,12 +426,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				884469491A1351350028AC2B /* TrendingTableViewController.m in Sources */,
+				88355A381A1A26CA005D844C /* VideoTableViewCell.m in Sources */,
 				884469541A1388F90028AC2B /* getData.m in Sources */,
 				8844694E1A1351C00028AC2B /* HotViewController.m in Sources */,
 				884469461A13511F0028AC2B /* HotTableViewCell.m in Sources */,
 				884469431A1351110028AC2B /* TrendingTableViewCell.m in Sources */,
 				884468DA1A1338800028AC2B /* AppDelegate.m in Sources */,
 				884469511A1351D20028AC2B /* TrendingViewController.m in Sources */,
+				88355A351A1A26B4005D844C /* VideoTVC.m in Sources */,
 				884469031A1349FA0028AC2B /* HotTableViewController.m in Sources */,
 				884468D71A1338800028AC2B /* main.m in Sources */,
 			);

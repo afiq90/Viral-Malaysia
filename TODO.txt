@@ -13,8 +13,9 @@ TODO :
 
 11) Add and banner view ads on webview/trending view controller
 12) Get youtube api for viral malaysia channel. Fetch API and display on videoTVC
-13) try to edit didReceiveRemoteNotification. if receive userinfo that contain channel for video display videoTVC.
+13) try to edit didReceiveRemoteNotification. If receive userinfo that contain channel for video display videoTVC.
 14) Make a fucking ICON.
+15) Use XCDYouTubeKit framework to play video from youtube.
 
 viralmalaysianews@gmail.com
 hacked123
@@ -23,6 +24,10 @@ Extend Features :
 
 1) Make a view controller for video. Fetch video data from youtube API or fetch data using FB Graph API.
 2) Make a simple icon like vice news app
+3) Limit 7 video and 7 article in free app
+4) Make 15 video and 15 video in pro version
+5) Pro version can download videos.
+6) No ads on pro version
 
 PROBLEM :
 
@@ -57,6 +62,7 @@ Extra :
 
 JSON URL For Category -> http://fastviralnews.com/?json=get_category_posts&slug=gosip
 JSON URL For Search -> http://fastviralnews.com/?json=get_search_results&search=iggy
+JSON URL For Video VM Channel Youtube -> http://gdata.youtube.com/feeds/api/users/UCvHHSOctV36yg14lDKZhlqg/uploads?alt=json&max-results=2
 App ID -> 941954552
 
 
