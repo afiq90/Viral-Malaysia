@@ -1,5 +1,6 @@
 PODS:
   - Appirater (2.0.4)
+  - CBStoreHouseRefreshControl (1.0)
   - Google-Mobile-Ads-SDK (6.12.2)
   - libwebp (0.4.2):
     - libwebp/dec
@@ -42,6 +43,7 @@ PODS:
 
 DEPENDENCIES:
   - Appirater
+  - CBStoreHouseRefreshControl
   - Google-Mobile-Ads-SDK (~> 6.10)
   - MBProgressHUD (~> 0.8)
   - SDWebImage (~> 3.6)
@@ -49,6 +51,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Appirater: cbdb7f305562cfde585300bfff86da01ae559deb
+  CBStoreHouseRefreshControl: 3c67731fe57aff3ccd2a151c9d13a6f2aed8a11e
   Google-Mobile-Ads-SDK: 9761186eb5dc5e1493e71dcce2b525159f763d42
   libwebp: 25b4f60612e703bd31b2ada3fd902c65929dce9f
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8

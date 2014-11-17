@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-CBStoreHouseRefreshControl.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Google-Mobile-Ads-SDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,42 +52,47 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0CE07EEC5C054D88867CCF37</key>
+		<key>41268CBF70B54AAEA4D877D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0EEB3C56B4FA481BB234C265</key>
+		<key>4FAB22C39C2C49FF92DE51FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1EC04169E0544621B8F56042</key>
+		<key>AD7B6E53A553475196ABA335</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>22976FB44EEF40B0940C77F2</key>
+		<key>D304976A32C54586ADF4C611</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>25CA68F6D96342139B3F7513</key>
+		<key>DD0D3309561B45C59535251F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>59DCABB2A4484A8BB13B7EA3</key>
+		<key>DD9DD6DEA3B94A5CA7999352</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>98976F8D6D4448E8B3286358</key>
+		<key>E27ADD490C6840F68D71785F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B36EC6F7265648D095B335F5</key>
+		<key>EA0A402877C348D19E3984A4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F5AA7066FB3D4A36897DF3A8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

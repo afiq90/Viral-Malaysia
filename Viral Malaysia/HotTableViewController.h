@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class CBStoreHouseRefreshControl;
+
 @interface HotTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UIImageView *articleImage;
 @property (copy, nonatomic) void(^failureBlock)(void);

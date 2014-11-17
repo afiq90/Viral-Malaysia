@@ -14,6 +14,7 @@
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "GADRequest.h"
 #import "GADInterstitial.h"
+#import "CBStoreHouseRefreshControl.h"
 
 #define ViralNewsPostRecent @"http://fastviralnews.com/?json=get_posts_recent"
 #define interstitialAdUnitID @"ca-app-pub-8582584431754214/5505035885"
@@ -29,6 +30,7 @@
 @property (nonatomic) MBProgressHUD *progressHUD;
 @property (nonatomic) GADInterstitial *interstitial;
 @property (nonatomic) UIImageView *imageView;
+@property (nonatomic) CBStoreHouseRefreshControl *storeHouseRefreshControl;
 @end
 
 @implementation HotTableViewController
@@ -61,7 +63,6 @@
         [self.tableView reloadData];
     }
     
-    
     // UIRefreshControl Stuff
     _refresh = [[UIRefreshControl alloc] init];
     [_refresh addTarget:self action:@selector(populateHotData) forControlEvents:UIControlEventValueChanged];
@@ -71,8 +72,10 @@
     NSString *dateString = [dateFormatter stringFromDate:[NSDate date]];
     NSString *lastUpdate = [NSString stringWithFormat:@"Last Update On %@:", dateString];
     _refresh.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdate];
-    
     [self setRefreshControl:_refresh];
+
+//    self.storeHouseRefreshControl = [CBStoreHouseRefreshControl attachToScrollView:self.tableView target:self refreshAction:@selector(populateHotData) plist:@"storehouse"];
+
 
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     [self populateHotDataWithCompletionHandler:nil];
@@ -120,6 +123,7 @@
                 [self.tableView reloadData];
                 [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                 [_refresh endRefreshing];
+                 //[self.storeHouseRefreshControl finishingLoading];
                 
                 // Hide MBProgressHUD
                 [_progressHUD hide:YES];
@@ -145,6 +149,7 @@
                 if (completionHandler) {
                     completionHandler(UIBackgroundFetchResultFailed); }
                 [weakself.refresh endRefreshing];
+                //[weakself.storeHouseRefreshControl finishingLoading];
             }];
             
            // completionHandler(UIBackgroundFetchResultFailed);
@@ -176,7 +181,8 @@
                 [self.tableView reloadData];
                 [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                 [_refresh endRefreshing];
-                
+               // [self.storeHouseRefreshControl finishingLoading];
+
                 // Hide MBProgressHUD
                 [_progressHUD hide:YES];
             });
@@ -226,7 +232,19 @@
     return cell;
 }
 
-#pragma mark - helper methods
+#pragma mark - UIScrollViewDelegate 
+
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+//    [self.storeHouseRefreshControl scrollViewDidScroll];
+//}
+//
+//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+//{
+//    [self.storeHouseRefreshControl scrollViewDidEndDragging];
+//}
+
+#pragma mark - Helper Methods
 
 
 // Remove the html tag from NSString
