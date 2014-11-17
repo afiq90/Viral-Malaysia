@@ -15,13 +15,13 @@
 
 @implementation TrendingViewController
 
--(void) viewDidAppear:(BOOL)animated {
+-(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
     
     // MBProgressHUD Stuff
-//    _progressHUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//    _progressHUD.mode = MBProgressHUDModeAnnularDeterminate;
-//    _progressHUD.labelText = @"Loading Article...";
+    //    _progressHUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    //    _progressHUD.mode = MBProgressHUDModeAnnularDeterminate;
+    //    _progressHUD.labelText = @"Loading Article...";
     
     // Set the delegate for webview
     self.trendingWebView.delegate = self;
@@ -36,15 +36,11 @@
     NSURL *url = [NSURL URLWithString:self.link];
     if (url != nil) {
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.trendingWebView loadRequest:request];
-            
         });
     }
     
-    //NSLog(@"trending url : %@", url);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,8 +55,8 @@
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView {
-   // [_progressHUD hide:YES];
-   [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    //[_progressHUD hide:YES];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 #pragma mark - Social Share Button

@@ -9,8 +9,15 @@ TODO :
 7) Make a apns using parse and wordpress -- DONE
 8) Give some animation, use damping for imageview. Use POP/CANVAS animation or default apple animation class. -- DONE
 9) Add an interstitial ads - DONE
-10) Add and banner view ads on webview/trending view controller
-11) Implement didReceiveRemoteNotification method on appdelegate.m -- DONE
+10) Implement didReceiveRemoteNotification method on appdelegate.m -- DONE
+
+11) Add and banner view ads on webview/trending view controller
+12) Get youtube api for viral malaysia channel. Fetch API and display on videoTVC
+13) try to edit didReceiveRemoteNotification. if receive userinfo that contain channel for video display videoTVC.
+14) Make a fucking ICON.
+
+viralmalaysianews@gmail.com
+hacked123
 
 Extend Features :
 
