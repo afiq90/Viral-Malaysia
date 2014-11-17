@@ -9,7 +9,7 @@
         <!--Viral Malaysia-->
         <scene sceneID="p4q-gb-6tW">
             <objects>
-                <tableViewController id="YZp-Lt-ud4" customClass="HotTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="hotTVC" id="YZp-Lt-ud4" customClass="HotTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="380" sectionHeaderHeight="22" sectionFooterHeight="22" id="NZe-DN-uaK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -246,7 +246,7 @@
         <!--Viral Malaysia-->
         <scene sceneID="2kF-LS-mSU">
             <objects>
-                <tableViewController id="IkU-CC-JUz" customClass="TrendingTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="trendingTVC" id="IkU-CC-JUz" customClass="TrendingTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="380" sectionHeaderHeight="22" sectionFooterHeight="22" id="nPA-kB-zeA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

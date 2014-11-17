@@ -10,7 +10,7 @@ TODO :
 8) Give some animation, use damping for imageview. Use POP/CANVAS animation or default apple animation class. -- DONE
 9) Add an interstitial ads - DONE
 10) Add and banner view ads on webview/trending view controller
-11) Implement didrecevivenotfication method on appdelegate.m
+11) Implement didReceiveRemoteNotification method on appdelegate.m -- DONE
 
 Extend Features :
 
@@ -19,8 +19,8 @@ Extend Features :
 
 PROBLEM :
 
-1) Remove the mbprogresshud from hot and trending webview
-2) Figure out why webview on trending view controller doesn't work properly.
+1) Remove the MBProgresshud from hot and trending webview -- DONE
+2) Figure out why webview on trending view controller doesn't work properly. -- SOLVE
 
 
 Note For Background Fetch :
@@ -55,8 +55,10 @@ App ID -> 941954552
 
 TO LEARN :
 
-1) tableview pagination
-2) save video to gallery
+1) Tableview pagination --> http://www.nsscreencast.com/episodes/8-automatic-uitableview-paging
+2) Save video to gallery
+3) Blocks -- DONE
+4) NSNotification
 3) Check out saily app at saily.co (can use this idea to make Cash On Delivery app for malaysian)
 
 http://bit.ly/1xOPpXC --> awesome puzzle game

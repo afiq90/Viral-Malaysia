@@ -10,6 +10,7 @@
 #import "HotTableViewController.h"
 #import <Parse/Parse.h>
 #import "Appirater.h"
+#import "HotTableViewController.h"
 
 #define APPID @"941954552"
 
@@ -49,6 +50,16 @@
                   clientKey:@"OWuC9wKQs4LRsWZ2bUwfFMfFNGDC0Fw4dBTCCFh3"];
     
     [self appirater];
+    
+    // Set the view to HotTableViewController when user tapped on remote notification
+//    UIStoryboard *ab = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    
+//    HotTableViewController *hotTVC = [ab instantiateViewControllerWithIdentifier:@"hotTVC"];
+//    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:hotTVC];
+//    UITabBarController *tabController = (UITabBarController*)self.window.rootViewController;
+//    
+//    [navController presentViewController:hotTVC animated:YES completion:nil];
+    
     return YES;
 }
 
@@ -63,7 +74,19 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [PFPush handlePush:userInfo];
+     NSLog(@"userinfo : %@", userInfo);
+    
+    
+    // Set the view to HotTableViewController when user tapped on remote notification
+    UIStoryboard *ab = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    HotTableViewController *hotTVC = [ab instantiateViewControllerWithIdentifier:@"hotTVC"];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:hotTVC];
+    UITabBarController *tabController = (UITabBarController*)self.window.rootViewController;
+    
+    [tabController presentViewController:navController animated:YES completion:nil];
 }
+
 
 #pragma mark - Background Fetch
 
