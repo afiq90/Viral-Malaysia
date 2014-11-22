@@ -63,7 +63,7 @@
 
 - (IBAction)socialShareButton:(id)sender {
     
-    NSString *test = [NSString stringWithFormat:@"@viralmalaysia %@, %@", self.shareTitle, self.link];
+    NSString *test = [NSString stringWithFormat:@"@viralmalaysia %@, %@, http://bit.ly/1HxWHWv", self.shareTitle, self.link];
     NSArray *arr = [NSArray arrayWithObject:test];
     UIActivityViewController *socialShare = [[UIActivityViewController alloc] initWithActivityItems:arr applicationActivities:nil];
     socialShare.excludedActivityTypes = @[UIActivityTypePostToFlickr,UIActivityTypePostToWeibo,UIActivityTypePrint,UIActivityTypePostToTencentWeibo,UIActivityTypeCopyToPasteboard];

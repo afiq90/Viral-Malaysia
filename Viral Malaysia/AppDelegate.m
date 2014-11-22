@@ -11,10 +11,14 @@
 #import <Parse/Parse.h>
 #import "Appirater.h"
 #import "HotTableViewController.h"
+#import "Reachability.h"
 
 #define APPID @"941954552"
 
 @interface AppDelegate ()
+{
+    Reachability *internetReachableFoo;
+}
 
 @end
 
@@ -58,7 +62,22 @@
 //    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:hotTVC];
 //    UITabBarController *tabController = (UITabBarController*)self.window.rootViewController;
 //    
-//    [navController presentViewController:hotTVC animated:YES completion:nil];
+//    [tabController presentViewController:navController animated:YES completion:nil];
+    
+    // Reachability : Detect for internet connection.
+    
+    internetReachableFoo = [Reachability reachabilityWithHostName:@"www.google.com"];
+    internetReachableFoo.reachableBlock = ^(Reachability *internetReachableFoo){
+        NSLog(@"Network is reachable.");
+    };
+    
+    internetReachableFoo.unreachableBlock = ^(Reachability *internetReachableFoo){
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"No Internet Connection" message:@"Please connect to the internet to make this app working properly. :)" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alertView show];
+    };
+    
+    // Start Monitoring
+    [internetReachableFoo startNotifier];
     
     return YES;
 }
@@ -74,17 +93,15 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [PFPush handlePush:userInfo];
-     NSLog(@"userinfo : %@", userInfo);
-    
+     //NSLog(@"userinfo : %@", userInfo);
     
     // Set the view to HotTableViewController when user tapped on remote notification
     UIStoryboard *ab = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
     HotTableViewController *hotTVC = [ab instantiateViewControllerWithIdentifier:@"hotTVC"];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:hotTVC];
-    UITabBarController *tabController = (UITabBarController*)self.window.rootViewController;
-    
-    [tabController presentViewController:navController animated:YES completion:nil];
+    UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
+//    tabController.selectedIndex = 0;
+    UINavigationController *navigationController = (UINavigationController *)tabController.selectedViewController;
+    [navigationController pushViewController:hotTVC animated:YES];
 }
 
 
@@ -114,7 +131,7 @@
     [Appirater setSignificantEventsUntilPrompt:-1];
     [Appirater setTimeBeforeReminding:2];
     [Appirater setDebug:NO];
-    [Appirater appLaunched:NO];
+    [Appirater appLaunched:YES];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

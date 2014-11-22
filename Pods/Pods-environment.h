@@ -54,6 +54,12 @@
 #define COCOAPODS_VERSION_MINOR_SDWebImage_WebP 7
 #define COCOAPODS_VERSION_PATCH_SDWebImage_WebP 1
 
+// SimpleAudioPlayer
+#define COCOAPODS_POD_AVAILABLE_SimpleAudioPlayer
+#define COCOAPODS_VERSION_MAJOR_SimpleAudioPlayer 0
+#define COCOAPODS_VERSION_MINOR_SimpleAudioPlayer 1
+#define COCOAPODS_VERSION_PATCH_SimpleAudioPlayer 2
+
 // UIActivityIndicator-for-SDWebImage
 #define COCOAPODS_POD_AVAILABLE_UIActivityIndicator_for_SDWebImage
 #define COCOAPODS_VERSION_MAJOR_UIActivityIndicator_for_SDWebImage 1
@@ -71,6 +77,12 @@
 #define COCOAPODS_VERSION_MAJOR_libwebp 0
 #define COCOAPODS_VERSION_MINOR_libwebp 4
 #define COCOAPODS_VERSION_PATCH_libwebp 2
+
+// libwebp/core
+#define COCOAPODS_POD_AVAILABLE_libwebp_core
+#define COCOAPODS_VERSION_MAJOR_libwebp_core 0
+#define COCOAPODS_VERSION_MINOR_libwebp_core 4
+#define COCOAPODS_VERSION_PATCH_libwebp_core 2
 
 // libwebp/dec
 #define COCOAPODS_POD_AVAILABLE_libwebp_dec

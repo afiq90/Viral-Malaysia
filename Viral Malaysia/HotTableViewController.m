@@ -10,8 +10,9 @@
 #import "HotTableViewCell.h"
 #import "getData.h"
 #import "SDWebImage/UIImageView+WebCache.h"
-#import "HotViewController.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import <SimpleAudioPlayer/SimpleAudioPlayer.h>
+#import "HotViewController.h"
 #import "GADRequest.h"
 #import "GADInterstitial.h"
 #import "CBStoreHouseRefreshControl.h"
@@ -73,9 +74,21 @@
     NSString *lastUpdate = [NSString stringWithFormat:@"Last Update On %@:", dateString];
     _refresh.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdate];
     [self setRefreshControl:_refresh];
+ 
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+    shadow.shadowOffset = CGSizeMake(0, 1);
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                           [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
+                                                           shadow, NSShadowAttributeName,
+                                                           [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:21.0], NSFontAttributeName, nil]];
+    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:255/255.0 green:45.0/255.0 blue:85.0/255.0 alpha:1.0]];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationItem.backBarButtonItem.title = @"Back";
 
-//    self.storeHouseRefreshControl = [CBStoreHouseRefreshControl attachToScrollView:self.tableView target:self refreshAction:@selector(populateHotData) plist:@"storehouse"];
-
+//    self.storeHouseRefreshControl = [CBStoreHouseRefreshControl attachToScrollView:self.tableView target:self refreshAction:@selector(populateHotData) plist:@"storehouse" color:[UIColor redColor] lineWidth:1.5 dropHeight:80 scale:1 horizontalRandomness:150 reverseLoadingAnimation:YES internalAnimationFactor:0.5];
+    
+    //  self.storeHouseRefreshControl = [CBStoreHouseRefreshControl attachToScrollView:self.tableView target:self refreshAction:@selector(populateHotData) plist:@"storehouse"];
 
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     [self populateHotDataWithCompletionHandler:nil];
@@ -185,11 +198,18 @@
 
                 // Hide MBProgressHUD
                 [_progressHUD hide:YES];
+                
+                //Play audio fore refresh
+                [SimpleAudioPlayer playFile:@"refresh.wav"];
             });
         }
     }];
     
     [dataTask resume];
+    
+//    NSURL* URL = [NSURL URLWithString:ViralNewsPostRecent];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+//    [self populateDataWithURL:URL request:request];
 }
 
 #pragma mark - Table view data source
@@ -201,7 +221,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return _articleArray.count;
+   // return _articleArray.count;
+    return 7;
 }
 
 
@@ -222,6 +243,10 @@
     
     NSString *imageString = [dataFromJSON valueForKeyPath:@"thumbnail_images.full.url"];
     NSURL *URL = [NSURL URLWithString:imageString];
+//    NSData *imageData = [NSData dataWithContentsOfURL:URL];
+//    UIImage *image = [UIImage imageWithData:imageData];
+//    UIImage *newImage = [self imageWithImage:image scaledToSize:image.size];
+//    cell.imageVIew.image = newImage;
     [cell.imageVIew sd_setImageWithURL:URL placeholderImage:[UIImage imageNamed:@"placeholder"]];
     
     cell.titleLabel.text = dataFromJSON[@"title"];
@@ -233,18 +258,30 @@
 
 #pragma mark - UIScrollViewDelegate 
 
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-//{
-//    [self.storeHouseRefreshControl scrollViewDidScroll];
-//}
-//
-//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-//{
-//    [self.storeHouseRefreshControl scrollViewDidEndDragging];
-//}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self.storeHouseRefreshControl scrollViewDidScroll];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    [self.storeHouseRefreshControl scrollViewDidEndDragging];
+}
 
 #pragma mark - Helper Methods
 
+// Resize Image
+
+- (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    //UIGraphicsBeginImageContext(newSize);
+    // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
+    // Pass 1.0 to force exact pixel size.
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
 
 // Remove the html tag from NSString
 - (NSString *)stringByStrippingHTML:(NSString *)inputString
@@ -319,10 +356,35 @@ didFailToReceiveAdWithError:(GADRequestError *)error {
         hotVC.link = linkToPass[@"url"];
         hotVC.shareTitle = linkToPass[@"title"];
     }
-    
-    
-    
 }
+
+#pragma mark - test methods.
+//- (void) populateDataWithURL:(NSURL*)URL request:(NSURLRequest*)request {
+//    
+//        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+//        _session = [NSURLSession sessionWithConfiguration:config];
+//    
+//        NSURLSessionDataTask *dataTask = [_session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+//    
+//            if(!error) {
+//                NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+//                _articleArray = [[NSArray alloc] init];
+//                _articleArray = [json valueForKeyPath:@"posts"];
+//                dispatch_async(dispatch_get_main_queue(), ^{
+//                    [self.tableView reloadData];
+//                    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+//                   // [_refresh endRefreshing];
+//                    [self.storeHouseRefreshControl finishingLoading];
+//    
+//                    // Hide MBProgressHUD
+//                    [_progressHUD hide:YES];
+//                });
+//            }
+//        }];
+//        
+//        [dataTask resume];
+//
+//}
 
 
 @end

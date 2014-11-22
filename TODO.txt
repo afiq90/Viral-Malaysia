@@ -10,21 +10,24 @@ TODO :
 8) Give some animation, use damping for imageview. Use POP/CANVAS animation or default apple animation class. -- DONE
 9) Add an interstitial ads - DONE
 10) Implement didReceiveRemoteNotification method on appdelegate.m -- DONE
+14) Make a fucking ICON. -- DONE
+
 
 11) Add and banner view ads on webview/trending view controller
-12) Get youtube api for viral malaysia channel. Fetch API and display on videoTVC
-13) try to edit didReceiveRemoteNotification. If receive userinfo that contain channel for video display videoTVC.
-14) Make a fucking ICON.
-15) Use XCDYouTubeKit framework to play video from youtube.
+12) Get youtube api for viral malaysia channel. Fetch API and display on videoTVC -- DONE
+13) try to edit didReceiveRemoteNotification. If receive userinfo that contain channel for video display videoTVC. -- DONE
+15) Use XCDYouTubeKit framework to play video from youtube. -- DONE
+16) Add sound when user pull to refresh
+17) Resize the image using uiimagecontext
 
 viralmalaysianews@gmail.com
 hacked123
 
 Extend Features :
 
-1) Make a view controller for video. Fetch video data from youtube API or fetch data using FB Graph API.
-2) Make a simple icon like vice news app
-3) Limit 7 video and 7 article in free app
+1) Make a view controller for video. Fetch video data from youtube API or fetch data using FB Graph API. -- DONE
+2) Make a simple icon like vice news app -- DONE
+3) Limit 7 video and 7 article in free app -- DONE
 4) Make 15 video and 15 video in pro version
 5) Pro version can download videos.
 6) No ads on pro version

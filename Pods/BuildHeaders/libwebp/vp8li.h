@@ -1,1 +1,1 @@
-../../libwebp/src/enc/vp8li.h
+../../libwebp/src/dec/vp8li.h

@@ -3,6 +3,7 @@ PODS:
   - CBStoreHouseRefreshControl (1.0)
   - Google-Mobile-Ads-SDK (6.12.2)
   - libwebp (0.4.2):
+    - libwebp/core
     - libwebp/dec
     - libwebp/demux
     - libwebp/dsp
@@ -10,22 +11,20 @@ PODS:
     - libwebp/mux
     - libwebp/utils
     - libwebp/webp
-  - libwebp/dec (0.4.2):
-    - libwebp/enc
-    - libwebp/utils
-  - libwebp/demux (0.4.2):
-    - libwebp/utils
-  - libwebp/dsp (0.4.2):
-    - libwebp/dec
-    - libwebp/enc
-    - libwebp/utils
-  - libwebp/enc (0.4.2):
-    - libwebp/utils
-  - libwebp/mux (0.4.2):
-    - libwebp/utils
-  - libwebp/utils (0.4.2):
-    - libwebp/dsp
+  - libwebp/core (0.4.2):
     - libwebp/webp
+  - libwebp/dec (0.4.2):
+    - libwebp/core
+  - libwebp/demux (0.4.2):
+    - libwebp/core
+  - libwebp/dsp (0.4.2):
+    - libwebp/core
+  - libwebp/enc (0.4.2):
+    - libwebp/core
+  - libwebp/mux (0.4.2):
+    - libwebp/core
+  - libwebp/utils (0.4.2):
+    - libwebp/core
   - libwebp/webp (0.4.2)
   - MBProgressHUD (0.9)
   - SDWebImage (3.7.1):
@@ -38,6 +37,7 @@ PODS:
   - SDWebImage/WebP (3.7.1):
     - libwebp
     - SDWebImage/Core
+  - SimpleAudioPlayer (0.1.2)
   - UIActivityIndicator-for-SDWebImage (1.2):
     - SDWebImage (~> 3.7)
   - XCDYouTubeKit (2.0.3)
@@ -48,6 +48,7 @@ DEPENDENCIES:
   - Google-Mobile-Ads-SDK (~> 6.10)
   - MBProgressHUD (~> 0.8)
   - SDWebImage (~> 3.6)
+  - SimpleAudioPlayer
   - UIActivityIndicator-for-SDWebImage
   - XCDYouTubeKit (~> 2.0.3)
 
@@ -55,9 +56,10 @@ SPEC CHECKSUMS:
   Appirater: cbdb7f305562cfde585300bfff86da01ae559deb
   CBStoreHouseRefreshControl: 3c67731fe57aff3ccd2a151c9d13a6f2aed8a11e
   Google-Mobile-Ads-SDK: 9761186eb5dc5e1493e71dcce2b525159f763d42
-  libwebp: 25b4f60612e703bd31b2ada3fd902c65929dce9f
+  libwebp: c471fec5a68b9ab8e0c1cbde275fa20eddaa02fa
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
   SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
+  SimpleAudioPlayer: d73a7be79c4f96a06b2f0be9d073284fb270dd9d
   UIActivityIndicator-for-SDWebImage: 8bd92c15280fbe54816448c6b14674145eee05c7
   XCDYouTubeKit: 840728453f0a22f54e4488ebeb8ee955a30c274c
 
